@@ -25,11 +25,18 @@ const updateItem = function(id, updateData) {
     },
     body: newData,
   });
-}
+};
+
+const deleteItem = function (id) {
+  return fetch(BASE_URL + '/items/' + id, {
+    method: 'DELETE'
+  });
+};
 
 export default {
   getItems,
   createItem,
   updateItem,
+  deleteItem,
   
 };
