@@ -1,6 +1,6 @@
 const items = [];
-let hideCheckeditems = false;
-let error = null;
+const hideCheckeditems = false;
+const error = null;
 
 const findById = function (id) {
   return this.items.find(currentItem => currentItem.id === id);
@@ -23,9 +23,9 @@ const toggleCheckedFilter = function () {
   this.hideCheckedItems = !this.hideCheckedItems;
 };
 
-const setError = (error) => {
+const setError = function (error) {
   this.error = error;
-}
+};
 
 export default {
   items,

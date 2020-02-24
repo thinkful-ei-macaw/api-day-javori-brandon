@@ -82,11 +82,11 @@ const handleNewItemSubmit = function () {
       .then((newItem) => {
         store.addItem(newItem);
         render();
-      });
-      .catch((error) => {
+      })
+      .catch(error => {
         store.setError(error.message);
         renderError;
-      })
+      });
   });
 };
 
@@ -98,7 +98,6 @@ const getItemIdFromElement = function (item) {
 
 const handleDeleteItemClicked = function () {
   $('.js-shopping-list').on('click', '.js-item-delete', event => {
-    // get the index of the item in store.items
     const id = getItemIdFromElement(event.currentTarget);
     api.deleteItem(id)
       .then(() => {
@@ -121,8 +120,8 @@ const handleEditShoppingItemSubmit = function () {
       .then(() => {
         store.findAndUpdate(id, { name: itemName });
         render();
-      });
-      .catch((error) => {
+      })
+      .catch(error => {
         store.setError(error.message);
         renderError();
       });

@@ -1,9 +1,5 @@
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/javi'
 
-@param {string} URL
-@param {object} options
-@returns {Promise}
-
 const listApiFetch = (...args) => {
   let error;
   return fetch(...args)
@@ -27,10 +23,11 @@ const listApiFetch = (...args) => {
 };
 
 const getItems = () => {
- return listApiFetch(`${BASE_URL}/items`);
-}
+  return listApiFetch(`${BASE_URL}/items`);
+};
 
 const createItem = (name) => {
+
   const newItem = JSON.stringify({ name });
 
   return listApiFetch(`${BASE_URL}/items`, {
